@@ -3,16 +3,20 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <section id="home" className="min-h-screen">
+      <section className="min-h-screen relative">
+        <a id="home" className="absolute -top-[70px]"></a>
         Hero
       </section>
-      <section id="portfolio" className="min-h-screen">
+      <section className="min-h-screen relative">
+        <a id="portfolio" className="absolute -top-[70px]"></a>
         Portfolio
       </section>
-      <section id="skills" className="min-h-screen">
+      <section className="min-h-screen relative">
+        <a id="skills" className="absolute -top-[70px]"></a>
         Skills
       </section>
-      <section id="contact" className="min-h-screen">
+      <section className="min-h-screen relative">
+        <a id="contact" className="absolute -top-[70px]"></a>
         Contact
       </section>
     </>
