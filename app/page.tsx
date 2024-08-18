@@ -1,5 +1,8 @@
+import ContactForm from "@/components/ContactForm";
 import Section from "@/components/Section";
-import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Home() {
   return (
@@ -10,21 +13,13 @@ export default function Home() {
 
       <Section anchor="contact">
         <h2 className="text-center font-bold">Contact</h2>
-        <div>
-          <form>
-            <div>
-              <input type="text" name="name" id="name" />
-            </div>
-            <div>
-              <input type="text" name="phone" id="phone" />
-            </div>
-            <div>
-              <input type="text" name="subject" id="subject" />
-            </div>
-            <div>
-              <textarea name="message" id="message"></textarea>
-            </div>
-          </form>
+        <div className="md:flex">
+          <div className="flex items-center p-4 justify-center md:w-1/2">
+            0434 497 587
+          </div>
+          <div className="flex w-full p-4 md:w-1/2">
+            <ContactForm />
+          </div>
         </div>
       </Section>
     </>
