@@ -8,7 +8,14 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleClick = (e: SyntheticEvent) => {
     e.preventDefault();
-    const el = e.target as HTMLElement;
+    const link = e.target as HTMLElement;
+    const selector = link.getAttribute('href');
+
+    if (!selector) return;
+
+    const el = document.querySelector(selector);
+    if (!el) return;
+
     el.scrollIntoView({ behavior: 'smooth' });
   }
 
@@ -34,7 +41,7 @@ const Header = () => {
                 <li key={label}>
                   <Link href={anchor} 
                         onClick={handleClick}
-                        className="hover:text-blue-500 hover:bg-blue-200 h-full flex items-center justify-center px-2">
+                        className="hover:text-blue-500 hover:bg-blue-200 h-full flex items-center justify-center px-2 py-4 md:py-0">
                           {label}
                   </Link>
                 </li>
