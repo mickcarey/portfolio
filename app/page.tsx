@@ -1,8 +1,5 @@
 import ContactForm from "@/components/ContactForm";
 import Section from "@/components/Section";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 
 export default function Home() {
   return (
