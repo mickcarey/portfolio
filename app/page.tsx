@@ -1,24 +1,32 @@
+import Section from "@/components/Section";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <section className="min-h-screen relative">
-        <a id="home" className="absolute -top-[70px]"></a>
-        Hero
-      </section>
-      <section className="min-h-screen relative">
-        <a id="portfolio" className="absolute -top-[70px]"></a>
-        Portfolio
-      </section>
-      <section className="min-h-screen relative">
-        <a id="skills" className="absolute -top-[70px]"></a>
-        Skills
-      </section>
-      <section className="min-h-screen relative">
-        <a id="contact" className="absolute -top-[70px]"></a>
-        Contact
-      </section>
+      <Section anchor="home">Home</Section>
+      <Section anchor="portfolio">Portfolio</Section>
+      <Section anchor="skills">Skills</Section>
+
+      <Section anchor="contact">
+        <h2 className="text-center font-bold">Contact</h2>
+        <div>
+          <form>
+            <div>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div>
+              <input type="text" name="phone" id="phone" />
+            </div>
+            <div>
+              <input type="text" name="subject" id="subject" />
+            </div>
+            <div>
+              <textarea name="message" id="message"></textarea>
+            </div>
+          </form>
+        </div>
+      </Section>
     </>
   );
 }
