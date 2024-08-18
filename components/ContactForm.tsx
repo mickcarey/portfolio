@@ -4,19 +4,26 @@ import React, { FormEvent } from 'react'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { Button } from './ui/button'
+import { useMutation } from 'convex/react';
+import { api } from '@/convex/_generated/api';
+import { create } from 'domain';
 
 const ContactForm = () => {
+  const createMessage = useMutation(api.messages.createMessage);
   async function handleSubmit (e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     const formData = new FormData(e.currentTarget);
-    const response = await fetch('/api/form-submission', {
-      method: 'POST',
-      body: formData
-    });
-    const data = await response.json();
+    const name = formData.get('name') as string;
+    const phone = formData.get('phone') as string;
+    const subject = formData.get('subject') as string;
+    const message = formData.get('message') as string;
 
-    console.log(data);
+    if (name && phone && subject && message) {
+      createMessage({
+        name, phone, subject, message
+      });
+    }
   }
 
   return (
